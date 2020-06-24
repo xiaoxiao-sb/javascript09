@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<button id="btn">按钮</button>
+		<div id="box"></div>
+		<script type="text/javascript">
+			/*
+			 * 字符串拼接的方式创建dom
+			 */
+			var arr = ['三国演义', '西游记', '红楼梦', '水浒传', '金瓶梅'];
+			var btn = document.getElementById('btn');
+			var box = document.getElementById('box');
+			var str = '';
+			btn.onclick = function() {
+				//				box.innerHTML = '<ul><li>你和我</li></ul>';
+				str = '<ul id="list">';
+				for(var i = 0; i < arr.length; i++) {
+					str = str + '<li>' + arr[i] + '</li>';
+				}
+
+				str = str + '</ul>';
+				console.log(str);
+				//添加到dom树上,才能从文档中获取到dom元素
+				box.innerHTML = str;
+				var list = document.getElementById('list');
+				//var lis = list.getElementsByTagName('li');
+				console.log(list.children);
+				for(var i = 0; i < list.children.length; i++) {
+					if(i % 2 == 0) {
+
+						list.children[i].style.background = 'red';
+						list.children[i].onmouseover = function() {
+							this.style.background = 'yellow';
+						}
+						list.children[i].onmouseout = function() {
+							this.style.background = 'red';
+						}
+					} else {
+						list.children[i].style.background = 'blue';
+						list.children[i].onmouseover = function() {
+							this.style.background = 'green';
+						}
+						list.children[i].onmouseout = function() {
+							this.style.background = 'blue';
+						}
+
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

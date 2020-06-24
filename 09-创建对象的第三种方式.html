@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<button id="btn">按钮</button>
+		<div id="box"></div>
+		<script type="text/javascript">
+			/*
+			 * 创建对象的第三种方式:
+			 * document.createElement('标签名')  创建节点对象
+			 * 元素.appendChild(节点对象); 将参数中的对象追加到元素的内部
+			 */
+			var arr = ['三国演义', '西游记', '红楼梦', '水浒传', '金瓶梅'];
+			var btn = document.getElementById('btn');
+			var box = document.getElementById('box');
+			btn.onclick = function(){
+				//创建ul对象
+				var ulObj = document.createElement('ul');
+				ulObj.id = 'list';
+				console.log(ulObj);
+				//将ul对象追加到box的内部
+				box.appendChild(ulObj);
+				for (var i = 0; i < arr.length; i++) {
+					
+					//创建li对象
+					var liObj = document.createElement('li');
+					//设置li内容
+					liObj.innerText = arr[i];
+					ulObj.appendChild(liObj);
+				}
+				
+				var list = document.getElementById('list');
+				console.log(list);
+				for(var i = 0; i < list.children.length; i++) {
+					if(i % 2 == 0) {
+
+						list.children[i].style.background = 'red';
+						list.children[i].onmouseover = function() {
+							this.style.background = 'yellow';
+						}
+						list.children[i].onmouseout = function() {
+							this.style.background = 'red';
+						}
+					} else {
+						list.children[i].style.background = 'blue';
+						list.children[i].onmouseover = function() {
+							this.style.background = 'green';
+						}
+						list.children[i].onmouseout = function() {
+							this.style.background = 'blue';
+						}
+
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

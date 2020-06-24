@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="box">
+			R&B曲风
+			<h2 class="one" title="标题">周杰伦</h2>
+			<ul id="list">
+				嘿嘿
+				<!--哈哈1-->
+				<!--哈哈2-->
+				<li>双节棍</li>
+				<li>青花瓷</li>
+				<li>稻香</li>
+				<li>菊花台</li>
+				<li>龙卷风</li>
+			</ul>
+
+			<!--作词-->
+			<h3>方文山</h3>
+		</div>
+		<script type="text/javascript">
+			/*
+			 * 
+			 */
+			var list = document.getElementById('list');
+			/*
+			 * 高级浏览器用firstElementChild,
+			 */
+			
+			console.log(getFirstElementChild(list));
+			
+			
+			function getFirstElementChild(obj) {
+				if(obj.firstElementChild) {
+//					alert('高级');
+					return obj.firstElementChild;
+				}else{
+					//alert('辣鸡');
+					//获取元素的第一个子节点,判断是否是元素,如果是就返回,
+					//如果不是接续找下一个兄弟节点,判断该节点是否是元素,如果是就返回,
+					//如果不是,继续找下一个兄弟节点...............
+					
+					
+					//for一般用在知道循环次数的多少
+//					for (var i = 0; i < Things.length; i++) {
+//						Things[i]
+//					}
+					
+					//while
+					var nodeE = obj.firstChild
+					
+					
+					//判断有节点   &&  判断该节点不是元素
+//					while(nodeE && nodeE.nodeType != 1){
+////						//找下一个兄弟节点
+//						nodeE = nodeE.nextSibling;
+//					}
+//					
+//					return nodeE;
+					for (var i = 0; i < obj.childNodes.length; i++) {
+						if(obj.childNodes[i].nodeType == 1){
+							return obj.childNodes[i]
+						}
+					}
+				}
+			}
+			
+		</script>
+	</body>
+
+</html>

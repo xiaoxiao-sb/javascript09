@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			R&B曲风
+			<h2 class="one" title="标题">周杰伦</h2>
+			<ul id="list">
+				嘿嘿
+				<!--哈哈1-->
+				<!--哈哈2-->
+				<li>双节棍</li>
+				<li id="li02">青花瓷</li>
+				lalala
+				<!--哈哈3-->
+				<li>稻香</li>
+				<li>菊花台</li>
+				<li>龙卷风</li>
+			</ul>
+
+			<!--作词-->
+			<h3>方文山</h3>
+		</div>
+		<script type="text/javascript">
+			var  li02 = document.getElementById('li02');
+			console.log(getNextElementSibling(li02));
+			
+			function getNextElementSibling(obj){
+				if(obj.nextElementSibling){
+					return obj.nextElementSibling;
+				}else{
+					var nodeE = obj.nextSibling;
+					while(nodeE && nodeE.nodeType != 1){
+						nodeE = nodeE.nextSibling;
+					}
+					return nodeE;
+				}
+			}
+		</script>
+	</body>
+</html>

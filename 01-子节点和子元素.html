@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="box">
+			R&B曲风
+			<h2 class="one" title="标题">周杰伦</h2>
+			<ul>
+				<li>双节棍</li>
+				<li>青花瓷</li>
+				<li>稻香</li>
+				<li>菊花台</li>
+				<li>龙卷风</li>
+			</ul>
+			<!--作词-->
+			<h3>方文山</h3>
+		</div>
+		<script type="text/javascript">
+			/*
+			 * 子节点:childNodes 儿子节点
+			 * 高级浏览器:
+			 * 元素:标签
+			 * 文本: 文本内容 ,空格,换行
+			 * 注释:注释内容
+			 * 低版本:
+			 * 元素:标签
+			 * 文本: 文本内容 (不包含空格,换行)
+			 * 注释:注释内容
+			   
+			     子元素: children 儿子元素
+			     高级浏览器:  元素
+			     低版本浏览器:元素和注释
+			 */
+			var box = document.getElementById('box');
+//			console.log(box.childNodes);
+			
+//			for (var i = 0; i < box.childNodes.length; i++) {
+////				console.log(box.childNodes[i].nodeType+'======'+box.childNodes[i].nodeName+'====='+box.childNodes[i].nodeValue);
+//				//获取元素
+//				if(box.childNodes[i].nodeType == 1){
+//					console.log(box.childNodes[i]);
+//				}
+//			}
+//			
+			console.log( box.children);
+			for (var i = 0; i < box.children.length; i++) {
+				
+			}
+		</script>
+	</body>
+</html>

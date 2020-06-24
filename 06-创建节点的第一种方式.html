@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<h1>一级标题</h1>
+		<script type="text/javascript">
+			/*
+			 * 创建节点的第一种方式: doucment.write(),只能在在页面加载的时候使用,否则
+			 * 当页面加载后,再使用会干掉所有的dom
+			 */
+			var btn = document.getElementById('btn');
+			btn.onclick = function(){
+				
+				document.write('<h2 title="haha">二级标题</h2>');
+			}
+		</script>
+	</body>
+</html>

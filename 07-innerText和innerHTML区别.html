@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<div id="box">我是盒子</div>
+		<script type="text/javascript">
+			/*
+			 * innerText和innerHTML区别: 当是文本时,innerText会原样输出,innerHTML会
+			 * 原样输出,当是标签时,innerText会原样输出,innerHTML会解析成效果
+			 */
+			var btn = document.getElementById('btn');
+			var box = document.getElementById('box');
+			
+			btn.onclick = function(){
+//				box.innerText = 'div就是我';
+//				box.innerHTML = 'div就是我';
+//				box.innerText = '<h1>div就是我</h1>';
+				box.innerHTML = '<h1>div就是我</h1>';
+			}
+		</script>
+	</body>
+</html>

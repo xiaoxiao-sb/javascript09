@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+			<button id="btn">按钮</button>
+		<ul id="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script type="text/javascript">
+			/*
+			 * 节点操作常用方法:
+			 *  父元素.appendChild(子元素):将子元素追加到父元素内部的最后
+			 *  父元素.insertBefore(新节点,参照节点):将新节点插入到参照节点的前面
+			 *  父元素.replaceChild(新节点,参照节点):将新节点替换参照节点
+			 *  父元素.removeChild(list.firstElementChild);删除参照节点
+			 */
+			var list = document.getElementById('list');
+			var btn = document.getElementById('btn');
+			btn.onclick = function(){
+				
+				var liNew = document.createElement('li');
+				liNew.innerText = '6';
+//				list.appendChild(li);
+//				list.insertBefore(liNew,list.firstElementChild);
+//				list.replaceChild(liNew,list.firstElementChild);
+				list.removeChild(list.firstElementChild);
+			}
+		</script>
+	</body>
+</html>
